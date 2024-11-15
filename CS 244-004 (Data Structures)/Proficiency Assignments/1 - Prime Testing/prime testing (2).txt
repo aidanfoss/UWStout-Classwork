@@ -1,0 +1,44 @@
+//Algorithm 1:				O(N^2)
+void printMorePrimes(int N) {
+    vector<bool> nums(N+1,true);
+    for (int j = 2; j < N; j++) {				//loops n times, skipping the numbers 0 and 1
+        for (int k = 2*j; k <= N; k += j) {			     nested for	//multiplies each number by all the numbers up to it (5*2, 5*3, 5*4, 5*5) and sets its results indexes to false, effectively finding and removing non-primes from the vector
+            nums[k] = false;
+        }
+    }
+    for (int i = 2; i <= N; i++) {				//n NOT NESTED, skips number 1, displays the primes
+        if (nums[i]) cout << "Prime: " << i << endl;
+    }
+} //runs 1 + (n-1)(n-1) + n , or O(N^2)
+
+//uses a vector to determine which numbers between 3 and N are prime using bools (t f t f t f f f etc)
+//needs N bools space in a vector for storage + 4 int variables
+//runs considerably faster, but stores an obnoxious amount of bools at larger sizes
+
+
+
+
+//Algorithm 2:   			O(n^2)
+void printPrimes(int N) {	
+    for (int i = 2; i <= N; i++) { 				//loops n times skipping the numbers 0 and 1
+        bool divisorFound{ false };				//sets no divisor to false by default each loop
+        for (int j = 2; j < i; j++) {					//loops n times skipping 1, dividing each number by every number below it and checking if its a perfect divide (ex: 4%2 = 0), which finds primes
+            if (i % j == 0) divisorFound = true;			//sets bool to truye each time a number is found with no possible divisible numbers (besides 1, as one is skipped each time)
+        }
+        if (!divisorFound) cout << "Prime: " << i << endl;	//outputs the prime numbers each loop if they are found
+    }
+} //runs n(3+n)
+
+//uses a simple bool
+//uses 4 variables of storage (int N, int i, int j, and bool divisorFound)
+//runs slower, but its storage required is always the same, and doesnt scale
+
+
+
+//this stuff is really interesting because its how computers do encryption! to brute force a prime number that is 50 numbers long takes an insane amount of runtime (10^50 x 10^50) to find its square root
+//i suppose that ends up being o(n^2) and they just maximize N
+
+
+//EDIT:
+//I would use the second one simply for its storage, it uses considerably less space with more data.
+//I believe i covered the other factors, like storage space. the second one doesnt store true or false and just prints it

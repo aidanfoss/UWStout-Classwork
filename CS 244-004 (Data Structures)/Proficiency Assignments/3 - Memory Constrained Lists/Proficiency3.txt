@@ -1,0 +1,33 @@
+I would use a circular linked list, because adding to the front and the back are functionally the same, 
+ignoring the pointers.
+
+You can also get rid of the first pointer, and simply use last and go to the next one. This reduces the amount of
+code by deleting a function and cleverly working around it. You wouldn't have to reassign the first pointer either,
+because it doesnt exist. 
+
+reassigning the last pointer is easy too, as you just reassign it to one after, 
+which can be done in one or two lines.
+
+this way, every piece of data only stores 2 pieces of info, compared to 3 for doubly linked
+
+size for 5 pieces of data:
+doubly linked : 15 + 1 assuming only header ptr
+circular : 10 + 1 (only tail ptr)
+tail pointer : 10 + 2 (head and tail ptr)
+header node: 12 + 2 (head and tail ptr)
+
+
+append function {
+	create pointer to a new listing
+	assign new listings pointer to last.nexts address
+	assign lasts next pointer to new listings address
+	assign last pointer to new listing 
+}
+this is O(1) because it doesnt have any for loops
+
+prepend {
+	create pointer to a new listing
+	assign new listings pointer to last.nexts address
+	assign lasts next value to the new listings address
+}
+this is O(1) because it doesnt have any for loops

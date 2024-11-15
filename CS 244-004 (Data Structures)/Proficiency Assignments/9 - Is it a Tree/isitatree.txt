@@ -1,0 +1,22 @@
+A family tree is a tree, but it is not a binary or binary search tree in the traditional graphic
+	-a couple can have more than two kids, therefore it cant be binary
+	-children come from a couple, not a single person, so it cant be a binary tree because of that either
+		(unless you have a tree that ignores one of the parents each time)
+	
+	-this would be a binary search tree if you go backwards, a single person has 2 parents, and each of them have 2 parents
+		root would be the youngest descendant, and its leaves are their parents
+
+an org chart could be a binary tree, if its in terms of teams instead of individuals
+	-a manager could manage more than 2 different people at a time, if the individuals are reduced down to a team
+		element, then it could work
+	-it works better if you go backwards, so from a team as the root down the list of bosses
+		(on second thought it works with an individual as the root)
+			each leaf is a boss/manager
+
+a bracket is a tree if you go backwards, each game has one winner and one loser
+	-would not work in a binary or binary search tree, because there are duplicate values
+	-a winning team plays again, and again, and again, so the hash would be reused
+
+	root would be the winner of the final game, if it were possible, and its leaves are the 2 teams from the game before
+
+	

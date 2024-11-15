@@ -1,0 +1,5 @@
+after 10000 simulations
+the avg for the first collision is 7.4122 inputs
+the avg num of inputs before x29 chain is	579.786
+avg num of inputs before loadfac of 0.9 is 27 inputs (this is due to my rounding, not sure what to do)
+avg num of inputs before loadfac of 1 is 29 inputs (this makes sense, 29inputs/29buckets = 1, it would always be 29)

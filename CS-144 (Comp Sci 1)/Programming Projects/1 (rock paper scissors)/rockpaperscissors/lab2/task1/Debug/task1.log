@@ -1,0 +1,3 @@
+﻿  numericTypes.cpp
+C:\Users\Aidan\OneDrive - University of Wisconsin-Stout\Computer Science 1 (144-005) [Fall 2021]\labs\Lab 2-1\Lab 2\numericTypes.cpp(28,51): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  task1.vcxproj -> C:\Users\Aidan\OneDrive - University of Wisconsin-Stout\Computer Science 1 (144-005) [Fall 2021]\Visual Studio\randomnumbers\lab2\Debug\task1.exe
